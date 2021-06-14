@@ -132,7 +132,12 @@ export class JokeCommands {
 		const hours2 = Math.floor((total2 / (1000 * 60 * 60)) % 24);
 		const days2 = Math.floor(total2 / (1000 * 60 * 60 * 24));
 		if (total2 > 0)
-			sendThisText += "\n" + ("Det er " + (hours2 > 0 ? hours2 + " timer " : "") + (minutes2 > 0 ? ", " + minutes2 + " minutter" : "") + (seconds2 ? " og " + seconds2 + " sekunder " : "") + " igjen av Magnus sin master!")
+		const total3 = new Date(2021, 6, 29, 15).getTime() - new Date().getTime();
+		const seconds3 = Math.floor((total3 / 1000) % 60);
+		const minutes3 = Math.floor((total3 / 1000 / 60) % 60);
+		const hours3 = Math.floor((total3 / (1000 * 60 * 60)) % 24);
+		const days3 = Math.floor(total3 / (1000 * 60 * 60 * 24));
+			sendThisText += "\n" + ("Det er " + (hours2 > 0 ? hours2 + " timer " : "") + (minutes2 > 0 ? ", " + minutes2 + " minutter" : "") + (seconds2 ? " og " + seconds2 + " sekunder " : "") + " igjen av Magnus sin master!")\\++ ("Det er " + (hours3 > 0 ? hours3 + " timer " : "") + (minutes3 > 0 ? ", " + minutes3 + " minutter" : "") + (seconds3 ? " og " + seconds3 + " sekunder " : "") + " igjen av Thomas sin sommerjobb!")
 		else
 			sendThisText += "\n" + ("Magnus har levert masteren sin :)")
 
